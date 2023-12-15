@@ -1,0 +1,17 @@
+<div class="center bg-white border-radius pd-28px w-297px">
+  <h2>Login Yifan-ERP</h2>
+
+  <form (ngSubmit)="login()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <button class="btn" type="submit">Login</button>
+  </form>
+</div>

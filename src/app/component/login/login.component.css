@@ -1,0 +1,58 @@
+form div {
+  margin-bottom: 17px;
+}
+
+label {
+  /*display: block;*/
+}
+
+input {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 11px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.pd-28px {
+  padding: 28px;
+}
+
+.w-297px{
+  width: 297px;
+}
+
+.btn {
+  background-color: #000;
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #555;
+}

@@ -34,7 +34,7 @@ input {
   padding: 28px;
 }
 
-.w-297px{
+.w-297px {
   width: 297px;
 }
 
@@ -55,4 +55,8 @@ input {
 
 .btn:hover {
   background-color: #555;
+}
+
+.color-red {
+  color: red;
 }

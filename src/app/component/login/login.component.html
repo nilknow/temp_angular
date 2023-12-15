@@ -1,18 +1,24 @@
 <div class="center bg-white border-radius pd-28px w-297px">
   <h2>Login Yifan-ERP</h2>
 
-  <form (ngSubmit)="login()">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+      Username:
+      <input type="text" formControlName="username" required>
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('password')?.touched">
+        <span class="color-red">Username is required.</span>
+      </div>
     </div>
 
     <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+      Password:
+      <input type="password" formControlName="password" name="password" required>
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <span class="color-red">Password is required and should be at least 8 characters long.</span>
+      </div>
     </div>
 
-    <button class="btn" type="submit">Login</button>
+    <button class="btn" type="submit" [disabled]="loginForm.invalid">Login</button>
   </form>
 
   <app-popup *ngIf="showPopup" [message]="errorMessage" (closed)="onPopupClosed()"></app-popup>

@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {delay, Observable, of} from "rxjs";
+import {Router} from "@angular/router";
 
 // todo replace with real backend API
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private readonly userNameKey = 'userName';
   private readonly expirationTimeKey = 'expirationTime';
 
-  constructor() {
+  constructor(private router:Router) {
   }
 
   private users: any[] = [
@@ -20,6 +22,7 @@ export class AuthService {
     const user = this.users.find(u => u.username === username && u.password === password);
 
     if (user) {
+      localStorage.setItem(this.userNameKey, username);
       //todo can add things like jwt token or sessionId in storage in production environment
       this.resetExpirationTime()
       // Simulate a successful auth with a delay of 1 second
@@ -31,7 +34,9 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem(this.userNameKey);
     localStorage.removeItem(this.expirationTimeKey);
+    this.router.navigate(['/'])
   }
 
   // Check if the user is logged in based on the expiration time

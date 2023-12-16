@@ -16,7 +16,9 @@ export class TimerService {
 
   resetExpirationTimer() {
     clearTimeout(this.timeout);
-    this.authService.resetExpirationTime()
+    if (this.authService.isLoggedIn()) {
+      this.authService.resetExpirationTime();
+    }
     this.timeout = setTimeout(() => {
       if (!this.authService.isLoggedIn()) {
         this.router.navigate(['/login'])

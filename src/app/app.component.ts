@@ -1,15 +1,18 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
-import {TopBarComponent} from "./component/top-bar/top-bar.component";
+import {TimerService} from "./service/timer/timer.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TopBarComponent],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'temp_angular';
+
+  constructor(timerService: TimerService) {
+  }
 }

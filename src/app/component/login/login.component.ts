@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, Validators} from "@angular/forms";
 import {ReactiveFormsModule} from '@angular/forms';
-import {LoginService} from "../../service/login.service";
+import {AuthService} from "../../service/auth/auth.service";
 import {PopupComponent} from "../popup/popup.component";
 import {NgIf} from "@angular/common";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-auth',
   standalone: true,
   imports: [
     FormsModule,
@@ -28,7 +28,7 @@ export class LoginComponent {
   loginForm: FormGroup;
 
 
-  constructor(private router: Router,private loginService: LoginService) {
+  constructor(private router: Router,private authService: AuthService) {
     this.loginForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)])
@@ -37,7 +37,7 @@ export class LoginComponent {
 
   login(): void {
     if (this.loginForm.valid) {
-      this.loginService.login(
+      this.authService.login(
         this.loginForm.get('username')?.value,
         this.loginForm.get('password')?.value
       ).subscribe(

@@ -1,6 +1,13 @@
 # TempAngular
 A project for showcasing all common Angular technologies.
 
+## Functions
+1. Login
+   1. login validation
+   2. login expiration
+   3. login router
+2. Top Bar Navigation
+
 ## Tools used
 1. Webstorm
 2. Angular/cli

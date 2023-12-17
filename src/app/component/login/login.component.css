@@ -2,10 +2,6 @@ form div {
   margin-bottom: 17px;
 }
 
-label {
-  /*display: block;*/
-}
-
 input {
   box-sizing: border-box;
   padding: 10px;
@@ -13,13 +9,6 @@ input {
   border: 1px solid #ccc;
   width: 100%;
   font-size: 16px;
-}
-
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .bg-white {

@@ -1,4 +1,4 @@
-# TempAngular
+# Yifan-ERP
 A project for showcasing all common Angular technologies.
 
 ## Functions

@@ -1,0 +1,40 @@
+.index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.title {
+  width: 160px;
+  height: 80px;
+  line-height: 80px;
+  background-color: #d5d2d2;
+  border-radius: 50%;
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.item {
+  padding: 10px 20px;
+  background-color: #e0dfdf;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}

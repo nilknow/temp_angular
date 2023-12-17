@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+button {
+  margin: 5px;
+  padding: 12px;
+  display: inline-block;
+  border: 0;
+  font-size: 16px;
+  background-color: #d5d2d2;
+  border-radius: 100px;
+}
+
+button:hover {
+  background-color: #555;
+}

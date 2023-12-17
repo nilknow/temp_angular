@@ -10,7 +10,7 @@ export class AuthService {
   private readonly userNameKey = 'userName';
   private readonly expirationTimeKey = 'expirationTime';
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
   }
 
   private users: any[] = [
@@ -36,7 +36,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem(this.userNameKey);
     localStorage.removeItem(this.expirationTimeKey);
-    this.router.navigate(['/'])
+    location.reload()
   }
 
   // Check if the user is logged in based on the expiration time
@@ -49,7 +49,7 @@ export class AuthService {
     return false;
   }
 
-  resetExpirationTime(){
+  resetExpirationTime() {
     localStorage.setItem(this.expirationTimeKey, String(new Date().getTime() + 10 * 60 * 1000));
   }
 }

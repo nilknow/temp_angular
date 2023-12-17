@@ -1,4 +1,12 @@
 body{
   background-color: #F5F5F5;
-  font-family: 'YourFontName', Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
